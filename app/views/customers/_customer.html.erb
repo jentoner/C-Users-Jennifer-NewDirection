@@ -1,24 +1,35 @@
 <div class="customer">
-  ----------------------------------
-  <h4><%= customer.fullname %></h4>
-  <p>
-    <strong>Province: </strong>
-    <% if customer.province.present? %>
-    <%= customer.province.name %>
-    <% else %>
-      Unknown
-    <% end %>
-  </p>
-  <p>
-    <% if customer.avatar.present? %>
-    <%= image_tag customer.avatar %>
-    <% else %>
-      Nothing to see here
-    <% end %>
-  </p>
-  <p>
-    <strong>Phone: </strong><%= customer.phone %>
-  </p>
-  <p>
-    <strong>Email: </strong><%= customer.email %>
-  </p>
+  <div class="card-group">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">
+        <%= customer.fullname %>
+      </h4>
+        <p class="card-text">
+          <strong>Phone: </strong><%= customer.phone %> |
+
+          <strong>Email: </strong><%= customer.email %> |
+
+          <strong>Province: </strong>
+            <% if customer.province.present? %>
+              <%= customer.province.name %>
+            <% else %>
+              Unknown
+              <% end %>
+        </p>
+      </div>
+    </div>
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title"></h4>
+      <p class="card-text">
+        <% if customer.avatar.present? %>
+          <%= image_tag customer.avatar, :width => '250', :height => '200' %>
+        <% else %>
+          Nothing to see here
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>
+</div>

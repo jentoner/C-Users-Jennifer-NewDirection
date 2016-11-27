@@ -25,3 +25,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 gem 'devise'
+
+# bootstrap
+gem 'bootstrap', '~> 4.0.0.alpha5'

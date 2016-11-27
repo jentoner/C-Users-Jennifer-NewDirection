@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root to: 'customers#index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
