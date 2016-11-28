@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   get 'customers' => 'customers#index', as: 'home'
 
   get 'customers/:id'      => 'customers#show',  as: 'customer'
-  get 'customers/:id/edit' => 'orders#edit',     as: 'edit'
+  get 'customers/:id/edit' => 'customers#edit',  as: 'edit'
   patch 'customers/:id'    => 'customers#update'
   put 'customers/:id'      => 'customers#update'
 
-  post 'customers'         => 'orders#create'
-  get 'customers/new'      => 'orders#new'
+  post 'customers'         => 'customers#create'
+  get 'customers/new'      => 'customers#new'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
