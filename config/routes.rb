@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
   resources :products
   # Static Pages Routes
-  get 'static_pages/about_us', as: 'about'
+  get 'static_pages/about_us',   as: 'about'
   get 'static_pages/contact_us', as: 'contact'
-
   # HTTP verbs: GET, POST, PUT, PATCH, DELETE
   # verb 'url/path' => 'controller#action'
   # Customers Routes
   root to: 'customers#index'
-  get 'customers' => 'customers#index', as: 'home'
+  get 'customers'          => 'customers#index', as: 'home'
 
   get 'customers/:id'      => 'customers#show',  as: 'customer'
   get 'customers/:id/edit' => 'customers#edit',  as: 'edit'
