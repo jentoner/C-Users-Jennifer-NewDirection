@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'static_pages/about_us', as: 'about'
+
+  get 'static_pages/contact_us', as: 'contact'
+
   # HTTP verbs: GET, POST, PUT, PATCH, DELETE
   # verb 'url/path' => 'controller#action'
   root to: 'customers#index'
