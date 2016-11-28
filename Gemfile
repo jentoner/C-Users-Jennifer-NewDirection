@@ -31,3 +31,6 @@ gem 'bootstrap', '~> 4.0.0.alpha5'
 
 # kaminari for pagination
 gem 'kaminari'
+
+# carrierwave for image uploads
+gem 'carrierwave'
