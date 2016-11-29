@@ -1,0 +1,27 @@
+<%= form_for(about_contact) do |f| %>
+  <% if about_contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(about_contact.errors.count, "error") %> prohibited this about_contact from being saved:</h2>
+
+      <ul>
+      <% about_contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

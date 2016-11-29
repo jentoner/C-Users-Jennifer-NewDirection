@@ -1,18 +1,19 @@
 Rails.application.routes.draw do
+  resources :about_contacts
   resources :products
 
   root to: 'products#index'
   # Static Pages Routes
-  get 'static_pages/about_us',   as: 'about'
-  get 'static_pages/contact_us', as: 'contact'
+  
+
   # HTTP verbs: GET, POST, PUT, PATCH, DELETE
   # verb 'url/path' => 'controller#action'
   # Customers Routes
 
-  get 'customers'          => 'customers#index', as: 'home'
+  get 'customers'          => 'customers#index',       as: 'home'
 
-  get 'customers/:id'      => 'customers#show',  as: 'customer'
-  get 'customers/:id/edit' => 'customers#edit',  as: 'edit'
+  get 'customers/:id'      => 'customers#show',        as: 'customer'
+  get 'customers/:id/edit' => 'customers#edit',        as: 'edit'
   patch 'customers/:id'    => 'customers#update'
   put 'customers/:id'      => 'customers#update'
 
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
   get 'customers/new'      => 'customers#new'
 
   # Active Admin Routes
-  get 'admin' => 'admin/dashboard#index', as: 'admin'
+  get 'admin'              => 'admin/dashboard#index', as: 'admin'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

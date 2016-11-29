@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Our Details</h2>
+
+<table>
+
+  <tbody>
+    <% @about_contacts.each do |about_contact| %>
+      <tr>
+        <td><%= about_contact.title %></td>
+        <td><%= link_to 'see more', about_contact %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
