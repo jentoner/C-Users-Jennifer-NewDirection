@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
+  get 'products/by_category/:category_id' => 'products#categorized', as: 'categorized'
+  resources :orders
   resources :categories
   resources :about_contacts
   resources :products
 
   root to: 'products#index'
-  # Static Pages Routes
 
-  get 'products/:id'      => 'products#show',        as: 'showproduct'
+  get 'products/:id' => 'products#show', as: 'showproduct'
+
   # HTTP verbs: GET, POST, PUT, PATCH, DELETE
   # verb 'url/path' => 'controller#action'
   # Customers Routes
@@ -23,9 +28,5 @@ Rails.application.routes.draw do
 
   # Active Admin Routes
   get 'admin'              => 'admin/dashboard#index', as: 'admin'
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  resources :orders
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

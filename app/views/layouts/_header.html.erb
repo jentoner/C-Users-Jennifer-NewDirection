@@ -14,6 +14,7 @@
       <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
         <%= link_to 'Products', products_path, class: "dropdown-item" %>
         <%= link_to 'Customers', home_path, class: "dropdown-item" %>
+        <%= link_to 'Fruit', categorized_path(2), class: "dropdown-item" %>
       </div>
     </li>
   </ul>
@@ -27,6 +28,6 @@
     <h1>Nikola Tesla Web Store</h1>
     <p>welcome</p>
     <br>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">View Current Sales</a> <a role="button"><%= link_to 'Browse Products', products_path, :class => "btn btn-primary btn-lg" %></a></p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">View Current Sales</a> <a role="button"><%= link_to 'Browse Products', products_path, :class => "btn btn-primary btn-lg" %></p>
   </div>
 </div>

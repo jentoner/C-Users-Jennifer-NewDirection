@@ -9,9 +9,15 @@ class ProductsController < InheritedResources::Base
     @product = Product.find(params[:id])
   end
 
+  def categrorized
+    #@products = Product.where(:category_id => params[:category_id]).page(params[:page]).per(3)
+    @category = Category.find(params[:category_id])
+    @products = @category.products
+  end
+
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :stock_quantity, :price, :image, :category, :category_id)
+    params.require(:product).permit(:name, :description, :stock_quantity, :price, :image, :category_id)
   end
 end
