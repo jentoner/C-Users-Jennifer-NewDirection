@@ -5,24 +5,26 @@
       <h4 class="card-title">
         <%= product.name %>
       </h4>
+      <p><%= product.description %></P>
 
       </div>
     </div>
   <div class="card">
     <div class="card-block">
       <p class="card-text">
+        <% if product.image.present? %>
+          <%= image_tag product.image, :width => '250', :height => '200' %>
+        <% else %>
           Nothing to see here
+        <% end %>
       </p>
     </div>
   </div>
   <div class="card">
     <div class="card-block">
       <div class="card-text">
-        <p class="card-text"><strong>Phone: </strong><%= product.category %></p>
-        <p><strong>Email: </strong><%= product.description %></p>
-        <p><strong>Province: </strong>
-            Unknown
-        </p>
+        <p class="card-text"><strong><%= number_to_currency product.price %></strong></p>
+          <p><span class="tag tag-pill tag-default"><%= product.category %></p>
       </div>
     </div>
   </div>
