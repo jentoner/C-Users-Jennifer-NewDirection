@@ -2,9 +2,9 @@ class ContactAboutController < ApplicationController
   def index
   end
 
-  def about_us
+  def show
+    page_id = params[:id]
+    @page = contact_about.find(page_id)
   end
-
-  def contact_us
-  end
+  # The associated view will load
 end
