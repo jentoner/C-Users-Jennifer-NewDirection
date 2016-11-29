@@ -1,2 +1,0 @@
-class ContactAbout < ApplicationRecord
-end

@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   # verb 'url/path' => 'controller#action'
   # Customers Routes
 
-  get '/contact_abouts/:id' => 'contact_abouts#show', as: 'page'
-
   get 'customers'          => 'customers#index', as: 'home'
 
   get 'customers/:id'      => 'customers#show',  as: 'customer'
