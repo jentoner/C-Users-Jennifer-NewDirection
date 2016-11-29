@@ -7,6 +7,7 @@
       </h4>
       <p><%= product.description %></P>
 
+        <h6><%= link_to 'View', showproduct_path(product) %>
       </div>
     </div>
   <div class="card">
@@ -24,7 +25,13 @@
     <div class="card-block">
       <div class="card-text">
         <p class="card-text"><strong><%= number_to_currency product.price %></strong></p>
-          <p><span class="tag tag-pill tag-default"><%= product.category %></p>
+          <p><span class="tag tag-pill tag-default">
+            <% if product.category.present? %>
+              <%= product.category.title %>
+            <% else %>
+              Unknown
+              <% end %>
+          </p>
       </div>
     </div>
   </div>

@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :about_contacts
   resources :products
 
   root to: 'products#index'
   # Static Pages Routes
-  
 
+  get 'products/:id'      => 'products#show',        as: 'showproduct'
   # HTTP verbs: GET, POST, PUT, PATCH, DELETE
   # verb 'url/path' => 'controller#action'
   # Customers Routes

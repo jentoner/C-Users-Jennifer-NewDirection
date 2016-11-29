@@ -1,4 +1,4 @@
 # Access to Province via active admin
 ActiveAdmin.register Product do
-  permit_params :name, :description, :price, :stock_quantity, :image, :category
+  permit_params :name, :description, :price, :stock_quantity, :image, :category, :category_id
 end

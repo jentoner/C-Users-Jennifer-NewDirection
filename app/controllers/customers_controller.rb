@@ -1,13 +1,8 @@
 # Customer Controller
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:show, :edit, :update, :destroy]
   # Rails automatically laods the app/views/customers/inex.html.erb
   def index
     @customers = Customer.order('fullname').page(params[:page]).per(3)
-  end
-
-  def customer_params
-    params.require(:customer).permit(:fullname, :email, :phone, :avatar, :notes, :id)
   end
 
   def show
@@ -18,8 +13,6 @@ class CustomersController < ApplicationController
     @customer = Customer.new
   end
 
-  # POST /products
-  # POST /products.json
   def create
     @customer = Customer.new(customer_params)
 
@@ -34,8 +27,6 @@ class CustomersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /products/1
-  # PATCH/PUT /products/1.json
   def update
     respond_to do |format|
       if @customer.update(customer_params)
@@ -48,8 +39,6 @@ class CustomersController < ApplicationController
     end
   end
 
-  # DELETE /products/1
-  # DELETE /products/1.json
   def destroy
     @customer.destroy
     respond_to do |format|
@@ -58,9 +47,7 @@ class CustomersController < ApplicationController
     end
   end
 
-  private
-
-  def set_customer
-    @customer = Customer.find(params[:id])
+  def customer_params
+    params.require(:customer).permit(:fullname, :email, :phone, :avatar, :notes, :id)
   end
 end
