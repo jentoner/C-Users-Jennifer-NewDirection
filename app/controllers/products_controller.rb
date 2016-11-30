@@ -11,9 +11,18 @@ class ProductsController < InheritedResources::Base
 
   def categorized
     # @products = Product.where(:category_id => params[:category_id]).page(params[:page]).per(3)
-    @category = Category.find( params[:category_id].to_i)
+    @category = Category.find(params[:category_id].to_i)
 
     @products = @category.products
+  end
+
+  def search
+    if params[:search]
+      value = params[:search]
+      @products = Product.where('name LIKE "%' + value + '%"') || Category.where('title LIKE "%' + value + '%"')
+    else
+      @products = Product.order('name').page(params[:page]).per(3)
+    end
   end
 
   private

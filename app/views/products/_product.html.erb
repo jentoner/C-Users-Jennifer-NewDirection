@@ -2,11 +2,9 @@
   <div class="card-group">
   <div class="card">
     <div class="card-block">
-      <h4 class="card-title">
-        <%= product.name %>
-      </h4>
-      <p><%= product.description %></P>
-
+      <h4 class="card-title"><%= product.name %></h4>
+        <%= product.description %>
+        <br><br><br><br>
         <h6><%= link_to 'View', showproduct_path(product) %></h6>
       </div>
     </div>
@@ -24,14 +22,15 @@
   <div class="card">
     <div class="card-block">
       <div class="card-text">
-        <p class="card-text"><strong><%= number_to_currency product.price %></strong></p>
-          <p><span class="tag tag-pill tag-default">
+        <strong class="card-text"><%= number_to_currency product.price %></strong>
+          <br>
+          <span class="tag tag-pill tag-default">
             <% if product.category.present? %>
               <%= product.category.title %>
             <% else %>
               Unknown
               <% end %>
-          </p>
+          </span>
       </div>
     </div>
   </div>

@@ -1,8 +1,7 @@
 <nav class="navbar navbar-light bg-faded">
   <ul class="nav navbar-nav">
-    <a><%= collection_select(:product, :category_id, Category.all, :id, :title) %></a>
     <li class="nav-item active">
-      <%= link_to 'Home', products_path, class: "dropdown-item" %><span class="sr-only">(current)</span>
+      <%= link_to 'Home', products_path, class: "dropdown-item" %>
     </li>
     <li class="nav-item active">
       <%= link_to 'About/Contact', about_contacts_path, class: "dropdown-item" %>
@@ -10,17 +9,25 @@
     <li class="nav-item active">
       <%= link_to 'Admin', admin_path, class: "dropdown-item" %>
     </li>
+    <li class="nav-item active">
+    <%= link_to 'Customers', home_path, class: "dropdown-item" %>
+    </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle dropdown-item" href="http://example.com" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown List</a>
+      <a class="nav-link dropdown-toggle dropdown-item" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
       <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
-        <%= link_to 'Products', products_path, class: "dropdown-item" %>
-        <%= link_to 'Customers', home_path, class: "dropdown-item" %>
+        <%= link_to 'Educational', categorized_path(1), class: "dropdown-item" %>
         <%= link_to 'Fruit', categorized_path(2), class: "dropdown-item" %>
+        <%= link_to 'Sweets', categorized_path(3), class: "dropdown-item" %>
+        <%= link_to 'Crimefighting', categorized_path(4), class: "dropdown-item" %>
+        <%= link_to 'Pets', categorized_path(5), class: "dropdown-item" %>
+        <%= link_to 'Inventor', categorized_path(6), class: "dropdown-item" %>
+        <%= link_to 'Tool', categorized_path(7), class: "dropdown-item" %>
+        <%= link_to 'Plants', categorized_path(8), class: "dropdown-item" %>
       </div>
     </li>
   </ul>
-  <form class="form-inline float-xs-right">
-    <input class="form-control" type="text" placeholder="Search">
+  <form class="form-inline float-xs-right" role="search" action="search" method="get">
+    <input class="form-control" type="text" placeholder="Search" name="search" value="">
     <button class="btn btn-primary btn-med" type="submit">Search</button>
   </form>
 </nav>
@@ -29,6 +36,6 @@
     <h1>Nikola Tesla Web Store</h1>
     <p>welcome</p>
     <br>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">View Current Sales</a> <a role="button"><%= link_to 'Browse Products', products_path, :class => "btn btn-primary btn-lg" %></p>
+    <p><%= link_to 'View Customers', home_path, :class => "btn btn-primary btn-lg" %><%= link_to 'Browse Products', products_path, :class => "btn btn-primary btn-lg" %></p>
   </div>
 </div>
