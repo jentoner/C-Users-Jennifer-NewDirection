@@ -15,7 +15,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle dropdown-item" id="supportedContentDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
       <div class="dropdown-menu" aria-labelledby="supportedContentDropdown">
-        <%= link_to 'Educational', categorized_path(1), class: "dropdown-item" %>
+        <%= link_to 'Educational', categorized_path(1), class: "dropdown-item"%>
         <%= link_to 'Fruit', categorized_path(2), class: "dropdown-item" %>
         <%= link_to 'Sweets', categorized_path(3), class: "dropdown-item" %>
         <%= link_to 'Crimefighting', categorized_path(4), class: "dropdown-item" %>
@@ -27,7 +27,7 @@
     </li>
   </ul>
   <form class="form-inline float-xs-right" role="search" action="search" method="get">
-    <input class="form-control" type="text" placeholder="Search" name="search" value="">
+    <input class="form-control" type="text" placeholder="Product Search" name="search" value="">
     <button class="btn btn-primary btn-med" type="submit">Search</button>
   </form>
 </nav>
