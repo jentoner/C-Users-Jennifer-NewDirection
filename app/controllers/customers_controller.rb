@@ -9,6 +9,12 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
+  def search
+    value = params[:search]
+    @customers = Customer.where('fullname LIKE "%' + value + '%" OR email LIKE "%' + value + '%"')
+    return @customers if params[:search]
+  end
+
   def new
     @customer = Customer.new
   end
