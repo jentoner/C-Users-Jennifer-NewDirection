@@ -19,8 +19,7 @@ class ProductsController < InheritedResources::Base
     if params[:search]
       value = params[:search]
       @products = Product.where('name LIKE "%' + value + '%"')
-    else
-      @products = Product.order('name').page(params[:page]).per(3)
+      @products = Product.where('description LIKE "%' + value + '%"')
     end
   end
 
