@@ -18,8 +18,8 @@ class ProductsController < InheritedResources::Base
   def search
     if params[:search]
       value = params[:search]
-      @products = Product.where('name LIKE "%' + value + '%"')
-      @products = Product.where('description LIKE "%' + value + '%"')
+      #@products = Product.where('name LIKE "%' + value + '%"') unless @products = Product.where('description LIKE "%' + value + '%"')
+      @products = Product.where('name LIKE "%' + value + '%" OR description LIKE "%' + value + '%"')
     end
   end
 
