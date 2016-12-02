@@ -2,7 +2,7 @@
 <!--Search results-->
 <h3>Search Results for "<%= params[:search] %>"</h3>
 <% if @products.empty? %>
-<h4>Nothing found. Sorry dude.</h4>
+<h4>Nothing found to match your search. Sorry, dude.</h4>
 <% else %>
 <%= render @products %>
 <% end %>
