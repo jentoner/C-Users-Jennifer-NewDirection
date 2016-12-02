@@ -17,7 +17,7 @@ class ProductsController < InheritedResources::Base
 
   def search
     value = params[:search]
-    @products = Product.where('name LIKE "%' + value + '%" OR description LIKE "%' + value + '%"')
+    @products = Product.where('name LIKE "%' + value + '%" OR description LIKE "%' + value + '%"').page(params[:page]).per(3)
     return @products if params[:search]
   end
 
